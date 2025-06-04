@@ -11,25 +11,26 @@
 		{
 			<div class="col-sm-4">
 				<div class="product-image-wrapper">
-					<a>
+			
 					<div class="single-products">
 						<div class="productinfo text-center">
+						<a asp-action="Details" asp-controller ="Product"asp-route-Id="@item.Id">
 							<img src="~/images/@item.Image" alt="" width="100%" alt="@item.Name" />
 							<h2>$@item.Price</h2>
 							<p>@item.Name</p>
 							<p>Danh muc: @item.Category.Name</p>
                             <p>Thuong hieu: @item.Brand.Name</p>
-							<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+						</a>
+							<a class="btn btn-default add-to-cart" asp-action="Add" asp-controller="Cart" asp-route-id="@item.Id"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 						</div>
-						<div class="product-overlay">
-							<div class="overlay-content">
-								<h2>$@item.Price</h2>
-								<p>@item.Name</p>
-								<a  class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-							</div>
-						</div>
+						@* <div class="product-overlay"> *@
+						@* 	<div class="overlay-content"> *@
+						@* 		<h2>$@item.Price</h2> *@
+						@* 		<p>@item.Name</p> *@
+						@* 		<a  class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> *@
+						@* 	</div> *@
+						@* </div> *@
 					</div>
-					</a>
 					<div class="choose">
 						<ul class="nav nav-pills nav-justified">
 							<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
